@@ -203,7 +203,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   topHeader: {
-    paddingTop: 10,
+    paddingTop: 44, // Aumente este valor (ex: 40 a 50) para descer mais o header
     paddingHorizontal: 16,
     paddingBottom: 8,
   },
