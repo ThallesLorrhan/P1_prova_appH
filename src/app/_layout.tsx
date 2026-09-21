@@ -1,36 +1,32 @@
 import { Stack } from "expo-router";
-import { StyleSheet } from "react-native";
-import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import { StyleSheet, View } from "react-native";
 
 export default function RootLayout() {
   return (
-    <SafeAreaProvider>
-      <SafeAreaView style={styles.container} edges={["top", "bottom"]}>
-        <Stack
-          screenOptions={{
-            headerShown: false,
-            gestureEnabled: true,
-            gestureDirection: "horizontal",
-            animation: "slide_from_right",
-            contentStyle: { backgroundColor: "#000000" },
-          }}
-        >
-          <Stack.Screen name="(tabs)" />
-          <Stack.Screen name="details" options={{ gestureEnabled: true }} />
-          <Stack.Screen
-            name="chat-details"
-            options={{ gestureEnabled: true }}
-          />
-          <Stack.Screen name="my-pets" options={{ gestureEnabled: true }} />
-        </Stack>
-      </SafeAreaView>
-    </SafeAreaProvider>
+    <View style={styles.globalContainer}>
+      <Stack
+        screenOptions={{
+          headerShown: false,
+          gestureEnabled: true,
+          gestureDirection: "horizontal",
+          animation: "slide_from_right",
+          contentStyle: { backgroundColor: "#000000" },
+        }}
+      >
+        <Stack.Screen name="(tabs)" />
+        <Stack.Screen name="details" options={{ gestureEnabled: true }} />
+        <Stack.Screen name="chat-details" options={{ gestureEnabled: true }} />
+        <Stack.Screen name="my-pets" options={{ gestureEnabled: true }} />
+      </Stack>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  globalContainer: {
     flex: 1,
     backgroundColor: "#000000",
+    paddingTop: 40, // Margem superior fixa (Notch/Status Bar) // Margem lateral geral
+    paddingBottom: 16, // Margem inferior geral
   },
 });
