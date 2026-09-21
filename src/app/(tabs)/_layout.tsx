@@ -1,21 +1,25 @@
 import { Tabs } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { Text, View } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function TabsLayout() {
+  const insets = useSafeAreaInsets();
+
   return (
     <>
-      {/* Força os ícones e texto da barra do iOS/Android a ficarem brancos */}
       <StatusBar style="light" />
 
       <Tabs
         screenOptions={{
           headerShown: false,
+          sceneStyle: { backgroundColor: "#000000" },
           tabBarStyle: {
             backgroundColor: "#000000",
             borderTopColor: "#1C1C1E",
-            height: 60,
-            paddingBottom: 25,
+            height: 80, // Aumentado de 60 para 80 para comportar o paddingBottom extra
+            paddingBottom: 24, // Aumentado de 15 para 24 para afastar os ícones da base
+            paddingTop: 8,
           },
           tabBarActiveTintColor: "#FF4458",
           tabBarInactiveTintColor: "#8E8E93",
@@ -76,6 +80,9 @@ export default function TabsLayout() {
             tabBarIcon: () => <Text style={{ fontSize: 20 }}>👤</Text>,
           }}
         />
+        <Tabs.Screen name="my-pets" options={{ href: null }} />
+        <Tabs.Screen name="chat-details" options={{ href: null }} />
+        <Tabs.Screen name="details" options={{ href: null }} />
       </Tabs>
     </>
   );
