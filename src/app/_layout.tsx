@@ -17,6 +17,10 @@ export default function RootLayout() {
         <Stack.Screen name="details" options={{ gestureEnabled: true }} />
         <Stack.Screen name="chat-details" options={{ gestureEnabled: true }} />
         <Stack.Screen name="my-pets" options={{ gestureEnabled: true }} />
+        <Stack.Screen name="add-pet" options={{ gestureEnabled: true }} />
+        <Stack.Screen name="notifications" options={{ gestureEnabled: true }} />
+        <Stack.Screen name="settings" options={{ gestureEnabled: true }} />
+        <Stack.Screen name="edit-profile" options={{ gestureEnabled: true }} />
       </Stack>
     </View>
   );
