@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import { useRouter } from "expo-router";
 
 const MEUS_PETS = [
   {
@@ -18,11 +19,13 @@ const MEUS_PETS = [
 ];
 
 export default function MyPetsScreen() {
+  const router = useRouter();
+
   return (
     <View style={styles.container}>
       <View style={styles.headerRow}>
         <Text style={styles.title}>Meus Pets Cadastrados</Text>
-        <TouchableOpacity style={styles.addBtn}>
+        <TouchableOpacity style={styles.addBtn} onPress={() => router.push("/add-pet")}>
           <Text style={styles.addBtnText}>+ Novo</Text>
         </TouchableOpacity>
       </View>
