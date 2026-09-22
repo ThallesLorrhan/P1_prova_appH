@@ -242,12 +242,15 @@ export default function HomeScreen() {
         <View style={styles.brandRow}>
           <Text style={styles.logoText}>🐾 Petmatch</Text>
           <View style={styles.headerIcons}>
-            <TouchableOpacity style={styles.iconBtn}>
+            <TouchableOpacity
+              onPress={() => router.push("/notifications")}
+              style={styles.iconBtn}
+            >
               <Text style={{ fontSize: 18 }}>🔔</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.iconBtn}>
+            {/* <TouchableOpacity style={styles.iconBtn}>
               <Text style={{ fontSize: 18 }}>🎛️</Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
           </View>
         </View>
 

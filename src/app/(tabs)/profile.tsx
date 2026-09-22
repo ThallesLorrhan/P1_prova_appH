@@ -23,7 +23,10 @@ export default function ProfileScreen() {
             source={require("../../../assets/images/perfil.jpeg")}
             style={styles.avatar}
           />
-          <TouchableOpacity style={styles.editBadge}>
+          <TouchableOpacity
+            onPress={() => router.push("/edit-profile")}
+            style={styles.editBadge}
+          >
             <Text style={{ fontSize: 12 }}>✏️</Text>
           </TouchableOpacity>
         </View>
@@ -86,7 +89,10 @@ export default function ProfileScreen() {
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Configurações</Text>
 
-        <TouchableOpacity style={styles.menuItem}>
+        <TouchableOpacity
+          onPress={() => router.replace("/settings")}
+          style={styles.menuItem}
+        >
           <Text style={styles.menuIcon}>⚙️</Text>
           <Text style={styles.menuText}>Preferências de Match</Text>
           <Text style={styles.arrowIcon}>›</Text>

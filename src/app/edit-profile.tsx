@@ -2,20 +2,20 @@ import { useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
 import {
-    Image,
-    ScrollView,
-    StyleSheet,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    View,
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
 } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function EditProfileScreen() {
   const router = useRouter();
   const insets = useSafeAreaInsets();
-  const [nome, setNome] = useState("Thalles Silva");
+  const [nome, setNome] = useState("Thalles Lorrhan");
   const [cidade, setCidade] = useState("Maricá, Rio de Janeiro");
   const [bio, setBio] = useState(
     "Apoiador da causa animal, tutor de 2 cães e voluntário em abrigos.",
@@ -45,7 +45,10 @@ export default function EditProfileScreen() {
         ]}
       >
         <View style={styles.avatarWrapper}>
-          <Image source={{ uri: avatar }} style={styles.avatar} />
+          <Image
+            source={require("./../../assets/images/perfil.jpeg")}
+            style={styles.avatar}
+          />
           <TouchableOpacity style={styles.changePhotoBtn}>
             <Text style={styles.changePhotoText}>Alterar Foto de Perfil</Text>
           </TouchableOpacity>

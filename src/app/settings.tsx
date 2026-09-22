@@ -2,12 +2,12 @@ import { useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
 import {
-    ScrollView,
-    StyleSheet,
-    Switch,
-    Text,
-    TouchableOpacity,
-    View,
+  ScrollView,
+  StyleSheet,
+  Switch,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
@@ -26,7 +26,10 @@ export default function SettingsScreen() {
     <View style={styles.container}>
       <StatusBar style="light" />
       <View style={[styles.header, { paddingTop: insets.top + 8 }]}>
-        <TouchableOpacity style={styles.backBtn} onPress={() => router.back()}>
+        <TouchableOpacity
+          style={styles.backBtn}
+          onPress={() => router.push("/(tabs)/profile")}
+        >
           <Text style={styles.backBtnText}>‹</Text>
         </TouchableOpacity>
         <Text style={styles.headerTitle}>Configurações</Text>
@@ -102,7 +105,7 @@ export default function SettingsScreen() {
         </View>
         <TouchableOpacity
           style={styles.logoutBtn}
-          onPress={() => router.replace("/")}
+          onPress={() => router.replace("/profile")}
         >
           <Text style={styles.logoutBtnText}>Sair da Conta</Text>
         </TouchableOpacity>
