@@ -1,13 +1,13 @@
 import { useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
-import React, { useState } from "react";
+import { useState } from "react";
 import {
-  FlatList,
-  Image,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
+    FlatList,
+    Image,
+    StyleSheet,
+    Text,
+    TouchableOpacity,
+    View,
 } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
@@ -96,8 +96,8 @@ export default function NotificationsScreen() {
                 prev.map((notification) =>
                   notification.id === item.id
                     ? { ...notification, read: true }
-                    : notification
-                )
+                    : notification,
+                ),
               );
               if (item.type === "message" || item.type === "match") {
                 router.push("/(tabs)/chats");

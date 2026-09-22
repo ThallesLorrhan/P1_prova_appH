@@ -1,12 +1,12 @@
-import {
-  FlatList,
-  Image,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
 import { useRouter } from "expo-router";
+import {
+    FlatList,
+    Image,
+    StyleSheet,
+    Text,
+    TouchableOpacity,
+    View,
+} from "react-native";
 
 const MEUS_PETS = [
   {
@@ -25,7 +25,10 @@ export default function MyPetsScreen() {
     <View style={styles.container}>
       <View style={styles.headerRow}>
         <Text style={styles.title}>Meus Pets Cadastrados</Text>
-        <TouchableOpacity style={styles.addBtn} onPress={() => router.push("/add-pet")}>
+        <TouchableOpacity
+          style={styles.addBtn}
+          onPress={() => router.push("/add-pet")}
+        >
           <Text style={styles.addBtnText}>+ Novo</Text>
         </TouchableOpacity>
       </View>
